@@ -1,0 +1,1 @@
+# HRIC-static-client
