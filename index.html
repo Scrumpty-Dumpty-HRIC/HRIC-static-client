@@ -26,6 +26,7 @@
         the following questions to the best of your ability to determine risk
         and BMI.
       </p>
+      <progress class="container" value="0" max="7"></progress>
       <form>
         <label>Which category does your current age fall into?</label>
         <select id="ageID" required>
@@ -114,21 +115,25 @@
         </select>
         <div class="grid">
           <div>
-            <button onclick="calculateRisk()">Calculate Risk</button>
+            <button id="calcRisk" onclick="calculateRisk()" type="submit">
+              Calculate Risk
+            </button>
             <p id="riskID"></p>
             <p id="riskMessage"></p>
           </div>
           <div>
-            <button onclick="calculateBMI()">Calculate BMI</button>
+            <button onclick="calculateBMI()" type="submit">
+              Calculate BMI
+            </button>
             <p id="bmiResultID"></p>
             <p id="bmiMessage"></p>
           </div>
         </div>
-        <button onclick="event.preventDefault()" class="outline">
-          Clear Entries
-        </button>
+        <button type="reset" class="outline">Clear Entries</button>
       </form>
     </main>
+    <script src="./src/validate.js"></script>
+    <script src="./src/progressBar.js"></script>
     <script src="./src/calculations.js"></script>
   </body>
 </html>
