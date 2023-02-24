@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./custom.css" />
+    <link rel="stylesheet" href="css/pico.min.css" />
+    <title>Health Risk Calculator</title>
+    <link rel="icon" href="./logo.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Health Risk Calculator</h1>
+      <p>
+        This tool will calculate your risk for insurance based on body-mass
+        index, blood pressure, age, and your family history of disease. Answer
+        the following questions to the best of your ability to determine risk
+        and BMI.
+      </p>
+      <form>
+        <label>Which category does your current age fall into?</label>
+        <select id="ageID" required>
+          <option value="" selected>-- Please select --</option>
+          <option value="0">Less than 30 years old</option>
+          <option value="10">30 to 45 years old</option>
+          <option value="20">45 to 60 years old</option>
+          <option value="30">Greater than 60 years old</option>
+        </select>
+
+        <label>What is your height in feet and inches?</label>
+        <select id="heightID" required>
+          <option value="" selected>-- Please select --</option>
+          <option value="48">4'0" or shorter</option>
+          <option value="50">4'2"</option>
+          <option value="52">4'4"</option>
+          <option value="54">4'6"</option>
+          <option value="56">4'8"</option>
+          <option value="58">4'10"</option>
+          <option value="60">5'0"</option>
+          <option value="62">5'2"</option>
+          <option value="64">5'4"</option>
+          <option value="66">5'6"</option>
+          <option value="68">5'8"</option>
+          <option value="70">5'10"</option>
+          <option value="72">6'0"</option>
+          <option value="74">6'2"</option>
+          <option value="76">6'4"</option>
+          <option value="78">6'6"</option>
+          <option value="80">6'8"</option>
+          <option value="82">6'10"</option>
+          <option value="74">7'0" or taller</option>
+        </select>
+
+        <label>What is your weight in pounds?</label>
+        <select id="weightID" required>
+          <option value="" selected>-- Please select --</option>
+          <option value="90">90 lbs</option>
+          <option value="100">100 lbs</option>
+          <option value="110">110 lbs</option>
+          <option value="120">120 lbs</option>
+          <option value="130">130 lbs</option>
+          <option value="140">140 lbs</option>
+          <option value="150">150 lbs</option>
+          <option value="160">160 lbs</option>
+          <option value="170">170 lbs</option>
+          <option value="180">180 lbs</option>
+          <option value="190">190 lbs</option>
+          <option value="200">200 lbs</option>
+          <option value="210">210 lbs</option>
+          <option value="220">220 lbs</option>
+          <option value="230">230 lbs</option>
+          <option value="240">240 lbs</option>
+          <option value="250">250 lbs</option>
+        </select>
+
+        <label>What category does your blood pressure fall under?</label>
+        <select id="bloodID" required>
+          <option value="" selected>-- Please select --</option>
+          <option value="0">Normal</option>
+          <option value="15">Elevated</option>
+          <option value="30">High Blood Pressure Stage 1</option>
+          <option value="75">High Blood Pressure Stage 2</option>
+          <option value="100">Hypertensive Crisis</option>
+        </select>
+
+        <label>Do you have diabetes?</label>
+        <select id="diabetesID" required>
+          <option value="" selected>-- Please select --</option>
+          <option value="0">No</option>
+          <option value="10">Yes</option>
+        </select>
+
+        <label>Do you have cancer?</label>
+        <select id="cancerID" required>
+          <option value="" selected>-- Please select --</option>
+          <option value="0">No</option>
+          <option value="10">Yes</option>
+        </select>
+
+        <label>Do you have Alzheimers?</label>
+        <select id="alzheimersID" required>
+          <option value="" selected>-- Please select --</option>
+          <option value="0">No</option>
+          <option value="10">Yes</option>
+        </select>
+        <div class="grid">
+          <div>
+            <button onclick="calculateRisk()">Calculate Risk</button>
+            <p id="riskID"></p>
+            <p id="riskMessage"></p>
+          </div>
+          <div>
+            <button onclick="calculateBMI()" class="outline">
+              Calculate BMI
+            </button>
+            <p id="bmiResultID"></p>
+            <p id="bmiMessage"></p>
+          </div>
+        </div>
+      </form>
+    </main>
+    <script src="./calculations.js"></script>
+  </body>
+</html>
