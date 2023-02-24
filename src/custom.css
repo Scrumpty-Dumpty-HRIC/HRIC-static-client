@@ -9,3 +9,8 @@ form {
   flex-direction: column;
   gap: 0.8rem;
 }
+
+progress {
+  position: fixed;
+  bottom: 0;
+}
