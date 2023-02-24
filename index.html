@@ -3,14 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./custom.css" />
-    <link rel="stylesheet" href="css/pico.min.css" />
+    <link rel="stylesheet" href="./src/custom.css" />
     <title>Health Risk Calculator</title>
-    <link rel="icon" href="./logo.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/logo.svg" type="image/svg+xml" />
   </head>
   <body>
     <main class="container">
-      <h1>Health Risk Calculator</h1>
+      <hgroup>
+        <h1>Health Risk Calculator</h1>
+        <h3>
+          Created by
+          <a
+            href="https://black-pebble-028ba7a10.2.azurestaticapps.net/"
+            target="_blank"
+            >ScrumptyDumpty</a
+          >
+        </h3>
+      </hgroup>
       <p>
         This tool will calculate your risk for insurance based on body-mass
         index, blood pressure, age, and your family history of disease. Answer
@@ -110,15 +119,16 @@
             <p id="riskMessage"></p>
           </div>
           <div>
-            <button onclick="calculateBMI()" class="outline">
-              Calculate BMI
-            </button>
+            <button onclick="calculateBMI()">Calculate BMI</button>
             <p id="bmiResultID"></p>
             <p id="bmiMessage"></p>
           </div>
         </div>
+        <button onclick="event.preventDefault()" class="outline">
+          Clear Entries
+        </button>
       </form>
     </main>
-    <script src="./calculations.js"></script>
+    <script src="./src/calculations.js"></script>
   </body>
 </html>
