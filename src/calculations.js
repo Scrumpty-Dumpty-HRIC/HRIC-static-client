@@ -85,3 +85,5 @@ function calculateBMI() {
 
   document.getElementById("bmiMessage").innerHTML = bmiMessage;
 }
+
+export { calculateRisk, calculateBMI };
