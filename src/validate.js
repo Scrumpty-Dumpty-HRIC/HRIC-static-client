@@ -1,51 +1,33 @@
-const choices = document.querySelectorAll("select");
+import { calculateRisk, calculateBMI } from "./calculations.js";
+
+const form = document.querySelector("form");
 const answered = new Set();
-const submit = document.querySelectorAll("form button[type=submit]");
+const riskBtn = document.getElementById("riskBtn");
+const bmiBtn = document.getElementById("bmiBtn");
 
-const progressBar = document.querySelector("progress");
-var progress = 0;
+// validate entries on change
+form.addEventListener("change", (e) => {
+  if (e.target.tagName === "SELECT") {
+    e.target.value == ""
+      ? e.target.setAttribute("aria-invalid", "true")
+      : e.target.removeAttribute("aria-invalid");
+  }
+});
 
-function updateProgress() {
-  choices.forEach((c) => {
-    c.addEventListener("change", () => {
-      if (c.value == "") {
-        answered.delete(c);
-        progress = answered.size /= 1;
-      } else {
-        answered.add(c);
-        progress = answered.size *= 1;
-      }
-      progressBar.setAttribute("value", progress);
-    });
-  });
+function validateform() {
+  answered.size == 7
+    ? true
+    : console.error("Form Invalid. Please answer all entries.");
 }
 
-function validateOnChange() {
-  choices.forEach((c) => {
-    c.addEventListener("change", () => {
-      if (c.value == "") {
-        c.setAttribute("aria-invalid", "true");
-      } else {
-        c.removeAttribute("aria-invalid");
-      }
-    });
-  });
-}
+riskBtn.addEventListener("click", () => {
+  if (validateform()) {
+    calculateRisk();
+  }
+});
 
-function validateOnSubmit() {
-  choices.forEach((c) => {
-    submit.forEach((s) => {
-      s.addEventListener("click", () => {
-        if (c.value == "") {
-          c.setAttribute("aria-invalid", "true");
-        } else {
-          // execute program
-        }
-      });
-    });
-  });
-}
-
-validateOnChange();
-validateOnSubmit();
-updateProgress();
+bmiBtn.addEventListener("click", () => {
+  if (validateform()) {
+    calculateBMI();
+  }
+});
