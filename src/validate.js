@@ -4,6 +4,7 @@ const form = document.querySelector("form");
 const answered = new Set();
 const riskBtn = document.getElementById("riskBtn");
 const bmiBtn = document.getElementById("bmiBtn");
+const clearBtn = document.getElementById("clearBtn");
 
 // validate entries on change
 form.addEventListener("change", (e) => {
