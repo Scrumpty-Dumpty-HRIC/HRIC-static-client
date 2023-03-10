@@ -1,3 +1,5 @@
+const api = "(replace when done with node.js API)";
+
 console.log("Starting Health Insurance Risk Calculator... ");
 
 function calculateRisk() {
