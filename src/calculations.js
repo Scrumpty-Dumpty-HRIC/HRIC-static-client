@@ -1,4 +1,4 @@
-const api = "(replace when done with node.js API)";
+const api = "https://hirc-api.azurewebsites.net/";
 
 console.log("Starting Health Insurance Risk Calculator... ");
 
